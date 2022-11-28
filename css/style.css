@@ -24,3 +24,74 @@ body {
     background-position: top;
     clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
 }
+
+.logo-box {
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    animation: clip;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    clip-path: circle(50%);
+}
+
+.logo {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    background: transparent;
+}
+
+.heading-box {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.heading {
+    display: block;
+    font-size: 40px;
+    color: #fff;
+    font-weight: 400;
+    letter-spacing: 20px;
+
+    /* animation section */
+    animation: moveInLeft;
+    animation-duration: 0.9s;
+    animation-timing-function: ease-in;
+}
+
+@keyframes clip {
+    0% {
+        clip-path: circle(0);
+    }
+
+    100% {
+        clip-path: circle(70%);
+    }
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    70% {
+        transform: translateX(10px);
+    }
+
+    80% {
+        transform: translateX(-4px);
+    }
+
+    90% {
+        transform: translateX(4px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
