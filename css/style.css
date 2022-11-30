@@ -31,7 +31,9 @@ body {
     top: 30px;
     animation: clip;
     animation-duration: 2s;
-    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 2;
     clip-path: circle(50%);
 }
 
@@ -47,6 +49,7 @@ body {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 .heading {
@@ -62,13 +65,45 @@ body {
     animation-timing-function: ease-in;
 }
 
+.btn {
+    border-radius: 99px;
+    transition-duration: 300ms;
+}
+
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+    background-color: #fff;
+    color: #777;
+}
+
 @keyframes clip {
     0% {
+        clip-path: circle(60px);
+    }
+
+    50% {
         clip-path: circle(0);
     }
 
     100% {
-        clip-path: circle(70%);
+        clip-path: circle(60px);
     }
 }
 
